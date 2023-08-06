@@ -1,2 +1,2 @@
-# webstite_petstock_react_nestjs
+# Webstite Petstock React Nestjs
 ReactJS, Vite, NestJS, TailwindCSS, Prisma, MongoDB
