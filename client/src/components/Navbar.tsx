@@ -29,8 +29,8 @@ export default function Navbar() {
 
 
         <div>
-            <header className="sticky left-0 right-0 top-0 z-20">
-                <div className=" pet-stock-color navbar  flex h-20 flex-grow bg-base-100">
+            <header className="h-20">
+                <div className=" pet-stock-color navbar  flex h-20 flex-grow bg-base-100 fixed left-0 right-0 top-0 z-10">
 
                     <div className="basis-1/4 justify-center">
                         <Link to="/" className="btn btn-ghost text-xl text-white" >PET STOCK</Link>
@@ -143,12 +143,18 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div className="navbar flex hidden h-10 flex-grow justify-center lg:flex">
+
+
+
+
+                    <div className="navbar flex hidden h-8 flex-grow justify-center lg:flex m-0">
                         <ul className="pet-stock-color menu menu-horizontal space-x-5 px-1">
                             {collections.length>0 && collections.slice(0,collections.length - 1).map(collec=>
                                 <Link to={`/collections/${collec.name}`}>
                             <div className="dropdown dropdown-hover">
-                                <label tabIndex={0} className="btn m-1 text-white pet-stock-color border-none hover:text-sky-900">{collec.name}</label>
+                                <label tabIndex={0} className="btn m-1 text-white pet-stock-color border-none hover:text-sky-900 text-lg">
+                                    {collec.name}
+                                </label>
                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                                     <li><a>Item 1</a></li>
                                     <li><a>Item 2</a></li>

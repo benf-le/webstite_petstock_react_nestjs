@@ -9,6 +9,9 @@
 .pet-stock-text-color{
   color: rgb(0, 40, 85);
 }
+.pet-stock-border-color{
+  border-color: rgb(0, 40, 85);
+}
 .btn{
   text-transform: capitalize;
 }

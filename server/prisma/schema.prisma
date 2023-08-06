@@ -12,24 +12,27 @@ model Collection {
   name String
 
   @@map("collection") //làm cách này để có thể đổi tên model tuỳ ý, mà có thể truy xuất data từ collection users của database
-
 }
 
 model Products {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  description String
-  imageUrl    String
-  name        String
-  price       Int
-  forSale     Boolean
+  id               String  @id @default(auto()) @map("_id") @db.ObjectId
+  descriptionShort String
+  imageUrl         String
+  name             String
+  price            Int
+  forSale          Boolean
+  size             String
+  quantity         Int
+  description      String
+  ingredient       String
+  reviews          String
 
   @@map("products") //làm cách này để có thể đổi tên model tuỳ ý, mà có thể truy xuất data từ collection users của database
-
 }
 
 model User {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  email     String @unique
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
   password  String
   firstName String
   lastName  String
@@ -37,6 +40,4 @@ model User {
   updatedAt DateTime @updatedAt
 
   @@map("users") //làm cách này để có thể đổi tên model tuỳ ý, mà có thể truy xuất data từ collection users của database
-
 }
-
