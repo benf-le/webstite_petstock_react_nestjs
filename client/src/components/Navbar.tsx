@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import HandleProducts from "../api/HandleProducts";
 import {Collections} from "../models/Collections";
+
 export default function Navbar() {
     const [collections, setCollections] = useState<Collections[]>([]) //Products co dang array
 
@@ -30,10 +31,11 @@ export default function Navbar() {
 
         <div>
             <header className="h-20">
-                <div className=" pet-stock-color navbar  flex h-20 flex-grow bg-base-100 fixed left-0 right-0 top-0 z-10">
+                <div
+                    className=" pet-stock-color navbar  flex h-20 flex-grow bg-base-100 fixed left-0 right-0 top-0 z-10">
 
                     <div className="basis-1/4 justify-center">
-                        <Link to="/" className="btn btn-ghost text-xl text-white" >PET STOCK</Link>
+                        <Link to="/" className="btn btn-ghost text-xl text-white">PET STOCK</Link>
                     </div>
 
 
@@ -144,22 +146,21 @@ export default function Navbar() {
                     </div>
 
 
-
-
-
                     <div className="navbar flex hidden h-8 flex-grow justify-center lg:flex m-0">
                         <ul className="pet-stock-color menu menu-horizontal space-x-5 px-1">
-                            {collections.length>0 && collections.slice(0,collections.length - 1).map(collec=>
+                            {collections.length > 0 && collections.slice(0, collections.length - 1).map(collec =>
                                 <Link to={`/collections/${collec.name}`}>
-                            <div className="dropdown dropdown-hover">
-                                <label tabIndex={0} className="btn m-1 text-white pet-stock-color border-none hover:text-sky-900 text-lg">
-                                    {collec.name}
-                                </label>
-                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><a>Item 1</a></li>
-                                    <li><a>Item 2</a></li>
-                                </ul>
-                            </div>
+                                    <div className="dropdown dropdown-hover">
+                                        <label tabIndex={0}
+                                               className="btn m-1 text-white pet-stock-color border-none hover:text-sky-900 text-lg">
+                                            {collec.name}
+                                        </label>
+                                        <ul tabIndex={0}
+                                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                            <li><a>Item 1</a></li>
+                                            <li><a>Item 2</a></li>
+                                        </ul>
+                                    </div>
                                 </Link>
                             )}
 
@@ -167,7 +168,7 @@ export default function Navbar() {
                             <button className="btn btn-ghost bg-red-600 text-white">
 
                                 <Link to={`/collections/${lastCollection?.name}`}>
-                                {lastCollection?.name}
+                                    {lastCollection?.name}
                                 </Link>
                             </button>
                         </ul>
