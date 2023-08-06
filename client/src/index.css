@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.pet-stock-color{
+  background-color: rgb(0, 40, 85);
+}
+.pet-stock-text-color{
+  color: rgb(0, 40, 85);
+}
+.btn{
+  text-transform: capitalize;
+}
+.p-btn-addToCart{
+  padding-left: 3.4rem;
+  padding-right: 3.4rem;
+}
