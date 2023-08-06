@@ -3,6 +3,7 @@ import MenuCollection from "../../components/MenuCollection";
 import Footer from "../../components/Footer";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import ProductsCard from "../../components/ProductsCard";
 
 
 export default function PageProduct(){
