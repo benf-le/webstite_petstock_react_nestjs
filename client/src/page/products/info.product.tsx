@@ -8,6 +8,9 @@ import {useParams} from "react-router-dom";
 export default function ProductInforPage() {
 
     const [productDetail, setProductDetail] = useState(null)
+    const [deliverOne, setDeliverOne] = useState(false)
+    const [autoShip, setAutoShip] = useState(false)
+
     const id = useParams().id;
 
     // console.log(id)
@@ -29,6 +32,15 @@ export default function ProductInforPage() {
     }, [])
 
 
+    useEffect(() => {
+        if (deliverOne) {
+            setAutoShip(false);
+        }
+        if (autoShip) {
+            setDeliverOne(false);
+        }
+    }, [deliverOne, autoShip]);
+
     return (
         <div>
             <Navbar/>
@@ -46,14 +58,52 @@ export default function ProductInforPage() {
                             </figure>
                         </div1>
                         <div2 className=" basis-2/4 grid border border-slate-200 rounded mx-8 px-5 ">
-                            <size className="h-16  ">
+                            <div className="h-16  ">
                                 <p className="py-4 font-medium ">
                                     Select Size:
-                                    <button className="btn btn-ghost border-2 pet-stock-border-color ml-5 px-8" >
+                                    <div
+                                        className="btn btn-ghost border-2 pet-stock-border-color ml-5 px-8 btn:hover:none">
 
-                                        {productDetail.size}</button></p>
+                                        {productDetail.size}</div></p>
                                 <hr/>
-                            </size>
+                                <div>
+                                    <div className=" py-4 ">
+
+                                        <div
+                                            className="w-full btn btn-ghost   px-8 h-20">
+                                            <label className="cursor-pointer label">
+                                                <input
+                                                    type="checkbox"
+                                                    className="checkbox checkbox-success"
+                                                    checked={deliverOne}
+                                                    onChange={()=>setDeliverOne(!deliverOne)}/>
+                                                {productDetail.price}
+                                            </label>
+
+                                           </div>
+
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className=" py-4 ">
+
+                                        <div
+                                            className="w-full btn btn-ghost border-2  px-8 h-20">
+                                            <label className="cursor-pointer label">
+                                                <input
+                                                    type="checkbox"
+                                                    className="checkbox checkbox-success"
+                                                    checked={autoShip}
+                                                    onChange={()=>setAutoShip(!autoShip)}/>
+                                                {productDetail.size}
+                                            </label>
+                                           </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
 
 
                         </div2>

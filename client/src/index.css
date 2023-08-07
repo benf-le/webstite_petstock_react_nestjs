@@ -16,6 +16,10 @@
   text-transform: capitalize;
 }
 
+.btn-none-hover{
+
+}
+
 .p-btn-addToCartSale{
   padding-left: 3.5rem;
   padding-right: 3.5rem;
