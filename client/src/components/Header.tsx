@@ -2,9 +2,15 @@ import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import HandleProducts from "../api/HandleProducts";
 import {Collections} from "../models/Collections";
+import {BiUser} from "react-icons/bi";
+import {AiOutlineUser} from "react-icons/ai";
+import {BsCart3} from "react-icons/bs";
+import Cart from "./Cart";
 
-export default function Navbar() {
+export default function Header() {
     const [collections, setCollections] = useState<Collections[]>([]) //Products co dang array
+    const [open, setOpen] = useState(false)
+
 
     useEffect(() => {
         getCollections()
@@ -49,38 +55,12 @@ export default function Navbar() {
                     <div className="basis-1/4 justify-center">
                         <Link to="/login">
                             <button className="btn btn-ghost text-white">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="h-6 w-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                                    />
-                                </svg>
+                                <AiOutlineUser/>
                                 Login
                             </button>
                         </Link>
-                        <button className="btn btn-ghost text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="h-6 w-6"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                                />
-                            </svg>
+                        <button className="btn btn-ghost text-white" onClick={()=>setOpen(!open)}>
+                            <BsCart3/>
                         </button>
                     </div>
                 </div>
@@ -175,6 +155,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </menu>
+            {open&&<Cart/>}
         </div>
     );
 }

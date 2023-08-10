@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar";
+import Header from "../../components/Header";
 import MenuCollection from "../../components/MenuCollection";
 import Footer from "../../components/Footer";
 import {useEffect, useState} from "react";
@@ -34,7 +34,7 @@ export default function PageProduct(){
 
     return (
         <div>
-            <Navbar/>
+
             <div className="px-20">
                 <div className="pet-stock-text-color py-10 text-5xl font-semibold">
                     DOG SUPPLIES
@@ -53,7 +53,7 @@ export default function PageProduct(){
                 </main>
 
             </div>
-            <Footer/>
+
         </div>
     );
 }

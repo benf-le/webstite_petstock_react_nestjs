@@ -1,8 +1,14 @@
-export interface Products{
+export interface Products {
     id: string
-    description: string
+    descriptionShort: string
     imageUrl: string
     name: string
     price: number
     forSale: boolean
+
+    size: string
+    quantity: number
+    description: string
+    ingredient: string
+    reviews: string
 }

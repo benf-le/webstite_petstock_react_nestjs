@@ -1,7 +1,7 @@
 
 import React, {useState} from "react";
 import axios from "axios";
-import Navbar from "../../components/Navbar";
+import Header from "../../components/Header";
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 
@@ -57,7 +57,7 @@ const SignUp = () => {
 
     return (
         <div>
-            <Navbar/>
+
             <div className="  hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className=" card w-full max-w-xl flex-shrink-0 bg-base-100 shadow-2xl">

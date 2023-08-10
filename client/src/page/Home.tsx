@@ -1,5 +1,5 @@
 
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 import BannerHome from "../components/BannerHome";
 import Footer from "../components/Footer";
 import ProductsCardSale from "../components/ProductsCardSale";
@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
         <div>
-            <Navbar/>
+
             <BannerHome/>
             <div>
                 <h1 className="py-10 pl-48 text-2xl font-semibold">
@@ -18,7 +18,7 @@ const Home = () => {
                 <ProductsCardSale />
             </div>
 
-            <Footer/>
+
         </div>
     )
 }
